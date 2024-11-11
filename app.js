@@ -11,7 +11,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
-fetch('https://raw.githubusercontent.com/TANTELY00/SIGDUF/main/hopitalManarapenitra.geojson')
+fetch('https://raw.githubusercontent.com/TANTELY00/SIGDUF/main/building.js')
   .then(response => response.json())
   .then(data => {
     const geojsonLayer = L.geoJSON(data).addTo(map);
