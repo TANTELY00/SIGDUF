@@ -11,13 +11,14 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
-fetch('hopitalManarapenitra.geojson')
+fetch('https://raw.githubusercontent.com/TANTELY00/SIGDUF/main/hopitalManarapenitra.geojson')
   .then(response => response.json())
   .then(data => {
-    console.log('Données GeoJSON:', data); // Vérifie le contenu des données
     const geojsonLayer = L.geoJSON(data).addTo(map);
-    map.fitBounds(geojsonLayer.getBounds()); // Ajuste la carte aux limites du GeoJSON
+    map.fitBounds(geojsonLayer.getBounds());
   })
   .catch(error => console.error('Erreur lors du chargement du GeoJSON:', error));
+
+
 
 
